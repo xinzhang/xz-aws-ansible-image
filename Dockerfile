@@ -14,7 +14,7 @@ RUN apk add --update python py-pip ca-certificates groff zip && \
 #Ansible
 RUN apk add gcc make libffi-dev musl-dev openssl-dev perl python-dev sshpass && \
   pip install --upgrade pip cffi  && \
-  pip install ansible boto3
+  pip install ansible boto3 boto
 
 #Clean up
 RUN rm -rf /tmp/* && \
