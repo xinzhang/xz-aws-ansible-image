@@ -31,7 +31,7 @@ ADD hosts /etc/ansible/hosts
 ADD test-playbook.yaml /home/developer/aws-ansible-test/test-playbook.yaml
 
 #copy credentials if there are any
-COPY .aws /root/.aws
+# COPY .aws /root/.aws
 
 WORKDIR /home/developer/aws-ansible-test
 CMD ["ansible-playbook", "--version"]
