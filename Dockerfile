@@ -11,6 +11,10 @@ RUN apk update && apk --no-cache add sudo curl nano bash vim \
 RUN apk add --update python py-pip ca-certificates groff zip && \
   pip install --upgrade pip awscli 
 
+#EKSCTL
+RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp && \
+  sudo mv /tmp/eksctl /usr/local/bin
+
 #Ansible
 RUN apk add gcc make libffi-dev musl-dev openssl-dev perl python-dev sshpass && \
   pip install --upgrade pip cffi  && \
